@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<div class="untitled-page untitled-page__realEstateSection">
+  <div class="untitled-page__group">
+    
+  </div>
+  <div class="untitled-page__flexCol">
+    <div class="untitled-page__flexRow">
+      <div class="untitled-page__contentBox">
+        <div class="untitled-page__flexCol1">
+          <img src="/static/msg1077964079-244131.000049.jpg">
+        </div>
+      </div>
+      <h1 class="untitled-page__mainTitle">Real<br />Estate 360</h1>
+      <button class="untitled-page__priceCalculatorBtn">Калькулятор цены</button
+      ><button class="untitled-page__aboutUsBtn">О нас</button><button class="untitled-page__helpBtn">Помощь</button
+      ><button class="untitled-page__loginBtn">Войти</button
+      >
+    </div>
+    <div class="formSection">
+        <div class="formGroup">
+            <h5 class="floorLabel">Этаж</h5>
+            <!-- Add the form elements here -->
+            <form action="/predict" method="post">
+                <div>
+                    <label for="Property Type">Number of Rooms:</label>
+                    <input type="number" id="Rooms" name="Property Type" required>
+                </div>
+                <div>
+                    <label for="Area">Area (m²):</label>
+                    <input type="number" step="0.01" id="Area" name="Area" required>
+                </div>
+                <div>
+                    <label>Region:</label>
+                    <div>
+                        <label>
+                            <input type="radio" name="Region" value="Астана, Есильский р-н" required>
+                            <span>Астана, Есильский р-н</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="radio" name="Region" value="Астана, Нура р-н" required>
+                            <span>Астана, Нура р-н</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="radio" name="Region" value="Астана, Сарыарка р-н" required>
+                            <span>Астана, Сарыарка р-н</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="radio" name="Region" value="Астана, р-н Байконур" required>
+                            <span>Астана, р-н Байконур</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="radio" name="Region" value="Астана, Алматы р-н" required>
+                            <span>Астана, Алматы р-н</span>
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <label>Home Type:</label>
+                    <div>
+                        <label>
+                            <input type="radio" name="Home Type" value="монолитный" required>
+                            <span>монолитный</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="radio" name="Home Type" value="кирпичный" required>
+                            <span>кирпичный</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="radio" name="Home Type" value="панельный" required>
+                            <span>панельный</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="radio" name="Home Type" value="иное" required>
+                            <span>иное</span>
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <label for="Year">Year:</label>
+                    <input type="number" id="Year" name="Year" required>
+                </div>
+                <div>
+                    <button type="submit">Predict</button>
+                </div>
+            </form>
+            {% if prediction_text %}
+            <h2>{{ prediction_text }}</h2>
+            {% endif %}
+        </div>
+    </div>
+    
+    
+  </div>
+</div>
+</body>
+</html>
